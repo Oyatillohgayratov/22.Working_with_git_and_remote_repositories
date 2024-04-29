@@ -19,6 +19,13 @@ func main() {
 
 	file.WriteString(name)
 
+	email, err := git.GetUserEmail()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	file.WriteString(email)
+
 	file.Close()
 
 }
